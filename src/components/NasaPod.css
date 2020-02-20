@@ -1,13 +1,13 @@
-.container {
+/* div {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 3px blue solid;
-    background-color: #0C154A;
+    /* border: 3px blue solid; */
+    /* background-color: #0C154A;
 }
 
-.title {
+div CardTitle {
     background-color: gray;
     margin: 2%;
 }
@@ -19,7 +19,7 @@
     flex-direction: column;
     justify-content: center;
     /* margin: 2%; */
-}
+/* }
 
 .nasapic img {
     width: 90%;
@@ -35,4 +35,4 @@
     margin: 2%;
     padding: 1%;
 
-}
+} */
