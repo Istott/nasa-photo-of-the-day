@@ -1,0 +1,38 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 3px blue solid;
+    background-color: #0C154A;
+}
+
+.title {
+    background-color: gray;
+    margin: 2%;
+}
+
+.nasapic {
+    width: 100%;
+    border: 1px red solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* margin: 2%; */
+}
+
+.nasapic img {
+    width: 90%;
+    margin-left: 5%;
+    border: 1px red solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.podinfo {
+    background-color: gray;
+    margin: 2%;
+    padding: 1%;
+
+}

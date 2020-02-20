@@ -1,6 +1,8 @@
 import React from "react";
 import NasaPod from "./components/NasaPod";
 import "./App.css";
+import "reactstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
