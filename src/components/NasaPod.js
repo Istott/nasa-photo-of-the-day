@@ -4,7 +4,7 @@ import axios from "axios";
 import "./NasaPod.css";
 import styled from "styled-components";
 import {
-  Card, CardText, CardBody, CardLink,
+  Card, CardText, CardBody,
   CardTitle, CardSubtitle, Col
 } from 'reactstrap';
 
@@ -24,6 +24,7 @@ const Pod = styled.div`
   display: flex;
   justify-content: center;
   background-color: #0C154A;
+  width: 100%;
 `;
 
 const Top = styled.div`
@@ -87,11 +88,11 @@ export default function NasaPod() {
                 <CardSubtitle>{pod.title}</CardSubtitle>
               </CardBody>
             </Top>
-            <Pod>
-              <Col xs="5" md="5" xl="5">
-                <img width="100%" src={pod.hdurl} alt='Nasa Pic Of The Day' />
-              </Col>
-            </Pod>
+              <Pod>
+                <Col xs="5" md="5" xl="5">
+                  <img width="100%" src={pod.hdurl} alt='Nasa Pic Of The Day' />
+                </Col>
+              </Pod>
             <Bottom>
               <CardBody>
                 <CardText>{pod.date}</CardText>
