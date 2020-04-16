@@ -3,10 +3,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./NasaPod.css";
 import styled from "styled-components";
-import {
-  Card, CardText, CardBody,
-  CardTitle, CardSubtitle, Col
-} from 'reactstrap';
+// import {
+//   Card, CardText, CardBody,
+//   CardTitle, CardSubtitle, Col
+// } from 'reactstrap';
 
 const Page = styled.div`
   display: flex;
@@ -25,9 +25,19 @@ const Pod = styled.div`
   justify-content: center;
   background-color: #0C154A;
   width: 100%;
+  margin: 1%;
+  
+  img {
+    /* border: 3px gray solid; */
+    border-radius: 20px;
+    width: 50%;
+    box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
+  }
 `;
 
 const Top = styled.div`
+  display: flex;
+  flex-direction: column;
   color: #D9D9D9;
   height: 10vh;
   width: 100%;
@@ -35,10 +45,40 @@ const Top = styled.div`
   margin: 0 0 2% 0;
 `;
 
+const Nasa = styled.h1`
+  /* color: #D9D9D9;
+  height: 10vh;
+  width: 100%;
+  background-color: #0C154A;
+  margin: 0 0 2% 0; */
+`;
+
+const TitleName = styled.h3`
+  /* color: #D9D9D9;
+  height: 10vh;
+  width: 100%;
+  background-color: #0C154A;
+  margin: 0 0 2% 0; */
+`;
+
 const Bottom = styled.div`
   color: #D9D9D9;
   width: 100%;
   background-color: #0C154A;
+
+`;
+
+const Date = styled.div`
+  /* color: #D9D9D9;
+  width: 100%;
+  background-color: #0C154A; */
+
+`;
+
+const Description = styled.div`
+  /* color: #D9D9D9;
+  width: 100%;
+  background-color: #0C154A; */
 
 `;
 
@@ -53,8 +93,7 @@ export default function NasaPod() {
       .then(response => {
         console.log(response);
         setPod(response.data);
-        // if (!pod) return <h3>Loading...</h3>;
-        
+        // if (!pod) return <h3>Loading...</h3>;  
       })
       .catch(error => {
         console.log("Sorry no NASA", error);
@@ -76,31 +115,22 @@ export default function NasaPod() {
   //   </div>
   // );
 
-
   return (
     <div>
       <Page>
-        <Card>
           <Whole>
-            <Top>
-              <CardBody>            
-                <CardTitle>NASA Photo Of The Day!</CardTitle>
-                <CardSubtitle>{pod.title}</CardSubtitle>
-              </CardBody>
+            <Top>           
+              <Nasa>NASA Photo Of The Day!</Nasa>
+              <TitleName>{pod.title}</TitleName>
             </Top>
               <Pod>
-                <Col xs="5" md="5" xl="5">
-                  <img width="100%" src={pod.hdurl} alt='Nasa Pic Of The Day' />
-                </Col>
+                <img width="100%" src={pod.hdurl} alt='Nasa Pic Of The Day' />
               </Pod>
             <Bottom>
-              <CardBody>
-                <CardText>{pod.date}</CardText>
-                <CardText>{pod.explanation}</CardText>
-              </CardBody>
+              <Date>{pod.date}</Date>
+              <Description>{pod.explanation}</Description>
             </Bottom>
           </Whole>
-        </Card>
       </Page>
     </div>
   );
